@@ -1,0 +1,123 @@
+/* 基本スタイル */
+body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    background-color: #f0f8ff; /* やさしい水色 */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    -webkit-user-select: none; /* テキスト選択を無効化 */
+    user-select: none;
+}
+
+h1 {
+    color: #00509e;
+}
+
+/* 画面切り替え用 */
+.screen {
+    display: none; /* 標準では非表示 */
+    width: 90%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.screen.active {
+    display: block; /* .active がついた画面だけ表示 */
+}
+
+/* 1. セット選択画面 */
+#set-list button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; /* 青色 */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#set-list button:hover {
+    background-color: #0056b3;
+}
+
+/* 2. クイズ画面 */
+#quiz-header {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#problem-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em; /* 問題を大きく表示 */
+    font-weight: bold;
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+#answer-input {
+    min-width: 100px;
+    border-bottom: 3px solid #ccc;
+    color: #007bff;
+    padding: 0 10px;
+    /* カーソル（キャレット）を表示するための工夫 */
+    animation: blink 1s step-end infinite;
+}
+/* カーソルの点滅 */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+#message-area {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #d9534f; /* 赤色（エラーメッセージ用） */
+    min-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* テンキー */
+#keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#keypad .key {
+    font-size: 2em;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#keypad .key:active {
+    background-color: #ccc;
+}
+
+#keypad .clear {
+    background-color: #ffc107; /* 黄色 */
+    grid-column: 1 / 2;
+}
+#keypad .submit {
+    background-color: #28a745; /* 緑色 */
+    color: white;
+    grid-column: 3 / 4;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>けいさんドリル</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>けいさんドリル</h1>
+
+    <div id="set-selection-screen" class="screen active">
+        <h2>どの もんだいに チャレンジする？</h2>
+        <div id="set-list">
+            </div>
+    </div>
+
+    <div id="quiz-screen" class="screen">
+        
+        <div id="quiz-header">
+            <span id="question-number"></span>
+        </div>
+        <div id="problem-area">
+            <span id="problem-text"></span>
+            <span id="answer-input"></span>
+        </div>
+
+        <div id="message-area">
+            </div>
+
+        <div id="keypad">
+            <button class="key" onclick="handleKeypadInput('7')">7</button>
+            <button class="key" onclick="handleKeypadInput('8')">8</button>
+            <button class="key" onclick="handleKeypadInput('9')">9</button>
+            <button class="key" onclick="handleKeypadInput('4')">4</button>
+            <button class="key" onclick="handleKeypadInput('5')">5</button>
+            <button class="key" onclick="handleKeypadInput('6')">6</button>
+            <button class="key" onclick="handleKeypadInput('1')">1</button>
+            <button class="key" onclick="handleKeypadInput('2')">2</button>
+            <button class="key" onclick="handleKeypadInput('3')">3</button>
+            <button class="key clear" onclick="handleKeypadInput('clear')">けす</button>
+            <button class="key" onclick="handleKeypadInput('0')">0</button>
+            <button class="key submit" onclick="handleKeypadInput('submit')">こたえる</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
